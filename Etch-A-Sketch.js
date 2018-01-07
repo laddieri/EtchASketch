@@ -25,8 +25,10 @@ drawGrid(11);
 
 const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener('click', function(e){
-  let choice = prompt("Enter a number between 5-100 to create a new grid to draw on.");
-
+  let choice = prompt("Enter a number between 1-20 to create a new grid to draw on.");
+  while (choice > 20) {
+    choice = prompt("You must enter a number between 1 and 20");
+  }
   while (container.firstChild){
     container.removeChild(container.firstChild);
   }
