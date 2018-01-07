@@ -3,7 +3,40 @@ div {
 }
 
 #container {
-  width: 500px;
   height: 500px;
+  width: 500px;
   border: 1px solid black;
+  box-sizing: content-box;
+  margin: auto;
+}
+
+#resetButton {
+  width: 200px;
+  height: 50px;
+  background-color: orange;
+  margin: auto;
+  position: relative;
+  top: 25px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  font-family: arial, sans-serif;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#resetButton:Hover {
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.highlight{
+  background-color: "blue";
+}
+
+.drawDiv{
+  border: none;
+  float: left;
+  border: 1px solid orange;
 }
