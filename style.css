@@ -5,7 +5,7 @@ div {
 #container {
   height: 700px;
   width: 700px;
-  border: 1px solid black;
+  border: 1px solid red;
   box-sizing: content-box;
   margin: auto;
 }
