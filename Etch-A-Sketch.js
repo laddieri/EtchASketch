@@ -1,22 +1,9 @@
 const body = document.querySelector('body');
-const resetDiv = document.querySelector('resetButton');
+const container = document.querySelector('#container');
+container.style.border="1px solid red";
 
-function drawContainer () {
-  const container = document.createElement('div');
-  container.setAttribute('id','container');
-  container.style.border="1px solid red";
-
-  return container;
-}
-
-let container = drawContainer();
-body.appendChild(container);
-
-
-function drawGrid (gridSize, containerSize) {
-    let blockSize = containerSize / gridSize;
-    container.style.height = containerSize + "px";
-    container.style.width = containerSize +"px";
+function drawGrid (gridSize) {
+  let blockSize = 700 / gridSize;
 
   for (let i=0;i<gridSize*gridSize;i++){
     const drawDiv = document.createElement('div');
@@ -34,17 +21,15 @@ function drawGrid (gridSize, containerSize) {
   }
 }
 
-drawGrid(11, 700);
+drawGrid(11);
 
 const resetButton = document.querySelector('#resetButton');
 resetButton.addEventListener('click', function(e){
-  let choice = prompt("Enter a number between 1-20 to create a new grid to draw on.");
-  if (choice > 20) {
-    choice = prompt("You must enter a number that is less than 20");
-  }
-  const newContainer = drawContainer();
-  body.replaceChild(newContainer,container);
-  container=newContainer;
+  let choice = prompt("Enter a number between 5-100 to create a new grid to draw on.");
 
-  drawGrid(choice, 700);
+  while (container.firstChild){
+    container.removeChild(container.firstChild);
+  }
+
+  drawGrid(choice);
 })

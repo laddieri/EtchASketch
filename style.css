@@ -3,8 +3,8 @@ div {
 }
 
 #container {
-  height: 500px;
-  width: 500px;
+  height: 700px;
+  width: 700px;
   border: 1px solid black;
   box-sizing: content-box;
   margin: auto;
